@@ -1,0 +1,253 @@
+1. Method Overloading:
+
+-->Method Overloading is having one or more class having same name but different parameter
+
+class Job{
+
+  static void apply()
+  {
+   System.out.println("Running apply in Job....");
+   System.out.println("\n");
+  }
+  static void apply(String personName, int experience)
+  {
+   System.out.println("Person Name:" +personName);
+   System.out.println("Person Experience:" +experience);
+   System.out.println("\n");
+  }
+   static void apply(String personName, int experience, String refName)
+  {
+   System.out.println("Person Name:" +personName);
+   System.out.println("Person Experience:" +experience);
+   System.out.println("Reference By:" +refName);
+   }
+ }
+_______________________________________________________________________________________ 
+class JobRunner{
+ 
+  public static void main(String[] args)
+  {
+ 
+   Job.apply();
+   
+   Job.apply("Rachana", 2);
+   
+   Job.apply("Raikar" , 2, "Rachana");
+   
+  }
+}
+_________________________________________________________________________________________
+2. Different Kinds Of Variables Defined in Java Programming language? with Example.
+
+There are 3 types Of Variables in Java Programming Language.
+They are,
+1. Static Variable
+2. Local Variable
+3. Instance Variable
+
+1.Static Variable:
+ Static Variable is a Variable which declared within the class but Out Side the Method.
+ex:
+ class PowerBank{
+
+   static String brand="RealMe";
+
+public static void main(String[] args)
+{
+  }
+}
+
+2. Local Variable:
+ Local Variable is a Variable which declared within the Method.
+ex:
+ class PowerBank{
+
+    public static void main(String[] args)
+   {
+      String brand="Samsung";
+   }
+}
+
+3.Instance Variable:
+  Instance Variable is a Variable which declared in the class, but Outside the Method.
+ex:
+ class PowerBank{
+  
+   String brand="Samsung";
+
+ public static void main(String[] args)
+{
+  }
+ }
+______________________________________________________________________________________________________________________________________________________________________
+3. Difference Between Heap and Stack Memory in Java?
+*Heap is the Primary Memory in Memory Allocation.
+  *Used to execute main Memory.
+*Stack Memory is the Memory 
+  *which Store the Constructor.
+  *Point to address of the Instance Memory.
+  *Forms the Stack frame which used to execution.
+  *After the Execution, Frame will removed.
+_______________________________________________________________________________________________________________________________________________________________________
+4. Program To Constructor Overloading:
+ class Pocket{
+
+ int noOfPocket;
+ String color;
+ 
+ Pocket()
+ {
+   }
+ }
+______________________________________________________________________________________--
+class PocketRunner{
+
+ public static void main(String[] args)
+ {
+  System.out.println("Invoking main in PocketRunner");
+  
+  Pocket pocket= new Pocket();
+  System.out.println(pocket.noOfPocket);
+  System.out.println(pocket.color);
+  
+  int noOfPocket=4;
+  String color="Pink";
+
+  Pocket pocket1=new Pocket();
+  
+  System.out.println(noOfPocket);
+  System.out.println(color);
+  
+  }}
+_____________________________________________________________________________________________________________________________________________________________________
+5.Instance Method Overlaoding in Java:
+
+class Oil{
+ 
+ String name;
+ int viscocity;
+ int quantity;
+ 
+ Oil()
+ {
+  Systm.out.println("Invoking const in oil");
+ }
+ Oil(String name)
+ {
+  System.out.println("Invoking const in oil");
+  System.out.println("Name Of Oil: " +name);
+  this.name=name;
+  }
+ Oil(String name, int viscocity)
+ {
+  System.out.println("Invoking const in oil");
+  System.out.println("Name Of Oil: " +name);
+  System.out.println("viscocity Of Oil: " +viscocity);
+  this.name=name;
+  this.viscocity=viscocity;
+  }
+  
+}
+________________________________________________________________________________________
+class OilMain{
+
+ public static void main(String[] args)
+ {
+  Oil oil = new Oil();
+  System.out.println(oil.name);
+  System.out.println(oil.viscocity);
+  System.out.println(oil.quantity);
+  
+  System.out.println("\n");
+  
+  Oil oil1 = new Oil("Sunflower");
+  System.out.println(oil1.name);
+  System.out.println("\n");
+  
+  Oil oil2 = new Oil("Sunflower",40);
+  System.out.println(oil2.name);
+  System.out.println(oil2.viscocity);
+  
+  }}
+________________________________________________________________________________________________________________________________________________________________________
+6. Program to static Variable and Static Method:
+
+1.Static Variable:
+ Static Variable is a Variable which declared within the class but Out Side the Method.
+ex:
+ class PowerBank{
+
+   static String brand="RealMe";
+
+public static void main(String[] args)
+{
+ System.out.println("Invoking main in PowerBank");
+  }
+}
+___________________________________________________________________________________________________________________________________
+2.Static Method:
+
+class Job{
+
+  static void apply()
+  {
+   System.out.println("Running apply in Job....");
+  }
+}
+______________________________________________________
+class JobRunner{
+ 
+  public static void main(String[] args)
+  {
+ 
+   Job.apply();
+  }
+}
+
+______________________________________________________________________________________________________________________________________________________________________
+7. Program to Constructor Chaining Using this Keyword:
+
+the Constructor chaining has Two Types: 
+  They are,
+   1.Super();-->Inherit from Parent Classs
+   2.this();-->Call the Function in Same Class.
+
+class Wood{
+
+ float price;
+ String type;
+ String color;
+  
+ Wood()
+ {
+  super();
+  System.out.println("Invoking constructor in Wood");
+ }
+ 
+ Wood(String type)
+ {
+  this();
+  System.out.println("Invoking String Const of Wood");
+  this.type=type;
+ }
+ 
+ Wood(String type, float price)
+ {
+  this(type); 
+  System.out.println("Invoking String, float const of Wood");
+  this.price=price;
+ }
+}
+_______________________________________________________________________________________________________-
+class WoodRunner{
+
+ public static void main(String[] args)
+ {
+  Wood wood = new Wood("Hard Wood");
+  
+  Wood wood1 = new Wood("Hard Wood" ,244.4f, "Brown");
+  
+  Wood wood2 = new Wood("Soft Wood", 150.0f);
+  
+  }}
+____________________________________________________________________________________________________________________________________________________________________
